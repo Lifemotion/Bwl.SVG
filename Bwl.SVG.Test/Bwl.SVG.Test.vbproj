@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-<ProjectGuid>{C291BFFB-13B6-4D4A-8CC9-7C9288190618}</ProjectGuid>
+    <ProjectGuid>{C291BFFB-13B6-4D4A-8CC9-7C9288190618}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>Bwl.SVG.Test.My.MyApplication</StartupObject>
     <RootNamespace>Bwl.SVG.Test</RootNamespace>
@@ -52,13 +52,12 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include = "Bwl.Framework" >
-<HintPath>..\refs\bwl-framework\Bwl.Framework.dll</HintPath>
-</Reference>
-<Reference Include = "bwl.Network.ClientServer" >
-<HintPath>..\refs\bwl-framework\bwl.Network.ClientServer.dll</HintPath>
-</Reference>
-
+    <Reference Include="Bwl.Framework">
+      <HintPath>..\refs\bwl-framework\Bwl.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="bwl.Network.ClientServer">
+      <HintPath>..\refs\bwl-framework\bwl.Network.ClientServer.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -97,6 +96,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="App.resx">
+      <DependentUpon>App.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -116,12 +118,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-<ProjectReference Include = "..\Bwl.SVG\Bwl.SVG.vbproj">
-<Project>{B7D17F31-9E8F-47E4-A3AA-6789958549E3}</Project>
-<Name>Bwl.SVG</Name>
-</ProjectReference>
-</ItemGroup>
-
+    <ProjectReference Include="..\Bwl.SVG\Bwl.SVG.vbproj">
+      <Project>{B7D17F31-9E8F-47E4-A3AA-6789958549E3}</Project>
+      <Name>Bwl.SVG</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
